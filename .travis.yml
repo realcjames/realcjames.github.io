@@ -33,3 +33,10 @@ deploy:
   target-branch: master # 推送的目标分支 local_dir->>master分支
   on:
     branch: hexo # 工作分支
+
+notifications:
+  email:
+    recipients:
+      - realcjames@163.com
+    on_success: always
+    on_failure: always
