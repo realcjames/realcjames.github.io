@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[开篇词]]></title>
+    <url>%2F2019%2F04%2F25%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[占坑。。]]></content>
+      <categories>
+        <category>-free</category>
+      </categories>
+      <tags>
+        <tag>-free</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[404]]></title>
+    <url>%2F404%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[categories]]></title>
+    <url>%2Fcategories%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[tags]]></title>
+    <url>%2Ftags%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+</search>
