@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://realcjames.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -54,9 +54,25 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: uncategorized
-category_map:
+default_category: Diary
+category_map: 
+    JavaScript: JavaScript
+    Html: Html
+    Css: Css
+    React: React
+    Vue: Vue
+    算法: Algorithms
+    日记: Diary
+    随笔: free
 tag_map:
+    JavaScript: JavaScript
+    Html: Html
+    Css: Css
+    React: React
+    Vue: Vue
+    算法: Algorithms
+    日记: Diary
+    随笔: free
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -88,3 +104,22 @@ vendors:
   # ...
   fancybox: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/js/jquery.fancybox.pack.js
   fancybox_css: //cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css
+
+search:
+  path: search.xml
+  field: all
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    use: live2d-widget-model-wanko
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
