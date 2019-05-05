@@ -17,12 +17,12 @@
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[categories]]></title>
+    <title><![CDATA[分类]]></title>
     <url>%2Fcategories%2Findex.html</url>
     <content type="text"></content>
   </entry>
   <entry>
-    <title><![CDATA[tags]]></title>
+    <title><![CDATA[标签]]></title>
     <url>%2Ftags%2Findex.html</url>
     <content type="text"></content>
   </entry>
