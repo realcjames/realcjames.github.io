@@ -7,10 +7,10 @@ category:
 tag:
   -Diary
 ---
-<!-- more -->
 ## iPhone X适配
-**问题：**公众号中的页面（Vue）有一个留言板功能，输入框是底部absolute的，点击以后，正常会键盘上浮并把整个页面推上去，input框在键盘上方，但iOS尤其是iPhone X，出现了遮挡
 
+**问题：**公众号中的页面（Vue）有一个留言板功能，输入框是底部absolute的，点击以后，正常会键盘上浮并把整个页面推上去，input框在键盘上方，但iOS尤其是iPhone X，出现了遮挡
+<!--more-->
 **解决过程：**
 
 1.先用了Element.scrollIntoView()无效； 
