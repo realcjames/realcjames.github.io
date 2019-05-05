@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2019-04-24 监听页面回退，清除eventListener]]></title>
+    <url>%2F2019%2F05%2F05%2F2019-04-24%20%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E5%9B%9E%E9%80%80%EF%BC%8C%E6%B8%85%E9%99%A4eventListener%2F</url>
+    <content type="text"><![CDATA[监听页面回退问题：小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。 解决方案：1234567891011created() &#123; if (window.history &amp;&amp; window.history.pushState) &#123; window.addEventListener("popstate", this.goBack, &#123; once: true &#125;); // 这个once表示 listener 在添加之后最多只调用一次。如果是 true， listener 会在其被调用之后自动移除 // 本来是计划在destroyed里面remove这个listener，但是似乎还没生效就destroy了，所以只能这样了 &#125;&#125;goBack() &#123; this.$router.go(-1);&#125; 遗留问题：能不能还是在destroyed里面remove这个listener? 清除eventListener123destroyed() &#123; window.removeEventListener("devicemotion", this.shakeListner, false);&#125;]]></content>
+      <categories>
+        <category>-Diary</category>
+      </categories>
+      <tags>
+        <tag>-Diary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2019-04-23 iPhone X适配，Vue+axiso跨域解决，类函数节流]]></title>
+    <url>%2F2019%2F05%2F05%2F2019-04-23%20iPhone%20X%E9%80%82%E9%85%8D%EF%BC%8CVue%2Baxiso%E8%B7%A8%E5%9F%9F%E8%A7%A3%E5%86%B3%EF%BC%8C%E7%B1%BB%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%2F</url>
+    <content type="text"><![CDATA[iPhone X适配问题：公众号中的页面（Vue）有一个留言板功能，输入框是底部absolute的，点击以后，正常会键盘上浮并把整个页面推上去，input框在键盘上方，但iOS尤其是iPhone X，出现了遮挡 解决过程： 1.先用了Element.scrollIntoView()无效； 2.尝试设置各种viewport-fit之类的无效； 3.最后用了聚焦时document.body.scrollTop = document.body.scrollHeight手动滑动到底部解决。 遗留问题： 1.Safari下的iPhone X，底部留白很严重，用了上述方法，键盘和input之间会出现很多留白； 2.这种方案感觉还是不够优雅。。。。 Vue+axiso跨域问题：ajax跨域。。。 解决过程：之前的项目里面是在package.json里面配置的跨域，这里是在webpack里面的config/index.js里面配置的proxyTable，这个网上教程还是比较多的。 遗留问题：这种和之前的有什么区别，为啥之前的在package.json里面配置？ 类函数节流需求：页面有个摇一摇功能，之前是每次摇都会请求，现在要改成每500ms一次，发送500ms内的请求总数 解决过程： 在网上找了个throttle函数节流的实现，但是这里的结构其实是这样的： 1234567window.addEventListener("devicemotion", () =&gt; &#123;// xxxif(xx) &#123;// 要在这里加一个节流函数&#125;// xxx&#125;, false); 这样其实是不对的。。。节流函数标准结构应该是 1window.addEventListener("devicemotion", _throttle(func, wait), false); 最后只能自己实现了一个类似的，vue里面定义一个data this.shakeTimer 1234this.shakeCount += 1;if (!this.shakeTimer) &#123; this.shakeTimer = setTimeout(() =&gt; this.run(this.shakeCount), 500);&#125; 然后在this.run里面先把this.shakeTimer和this.shakeCount清空再去请求（否则在请求返回之前的那段时间摇的次数就不会被计入了） 引申问题：似乎iOS和安卓的摇一摇速度不一样，怎么解决？手动控制多少毫秒只能有一次？]]></content>
+      <categories>
+        <category>-Diary</category>
+      </categories>
+      <tags>
+        <tag>-Diary</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[开篇词]]></title>
     <url>%2F2019%2F04%2F25%2Fhello-world%2F</url>
     <content type="text"><![CDATA[占坑。。]]></content>
