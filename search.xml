@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[modules]]></title>
+    <url>%2F2019%2F05%2F13%2F2019-05-13%20react%E5%BC%95%E5%85%A5postcss-pxtorem%EF%BC%8Csass%E5%92%8Ccss%20modules%2F</url>
+    <content type="text"><![CDATA[react引入postcss-pxtorem，sass和css modules需求: taro应该暂时不支持styled-components，于是决定在这个预热的项目里面，用sass+css modules，并且因为是移动端，响应式是必须的，这里选择pxtorem。 sass和css modules介绍：网上太多了，这里就不贴了 配置：其实最新的create-react-app脚手架应该是自带了这两个功能，只不过有一点需要注意，在yarn eject展开webpack的配置后，看到在config/webpack.config.js文件里面，有这样一段： 1234const cssRegex = /\.css$/;const cssModuleRegex = /\.module\.css$/;const sassRegex = /\.(scss|sass)$/;const sassModuleRegex = /\.module\.(scss|sass)$/; 应该可以理解为，.module.(css | scss | sass)后缀的，才能启用css modules功能。 使用： 12345import styles from 'css/PreorderMeasurement.module.scss';render() &#123; return &lt;div className=&#123;styles.test&#125; /&gt;&#125; 自定义class名： 默认的生成class名规则是这样的： Creates a class name for CSS Modules that uses either the filename or folder name if named index.module.css.For MyFolder/MyComponent.module.css and class MyClass the output will be MyComponent.module_MyClass__[hash]. For MyFolder/index.module.css and class MyClass the output will be MyFolder_MyClass__[hash]编译完以后是这样的： 1&lt;div class="PreorderMeasurement_test11__3hBMi"&gt;&lt;/div&gt; 修改这里的配置： 12345678910111213 &#123; test: sassModuleRegex, use: getStyleLoaders( &#123; importLoaders: 2, sourceMap: isEnvProduction &amp;&amp; shouldUseSourceMap, modules: true, // getLocalIdent: getCSSModuleLocalIdent, 这里是默认配置 localIdentName: '[path]__[name]__[local]___[hash:base64:5]', &#125;, 'sass-loader', ),&#125;, 再编译以后就变成这样了： 1&lt;div class="src-css-__PreorderMeasurement-module__test11___3oqbM"&gt;&lt;/div&gt; postcss-pxtorem安装配置：]]></content>
+      <categories>
+        <category>-Diary -React</category>
+      </categories>
+      <tags>
+        <tag>-Diary -React</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2019-04-24 监听页面回退，清除eventListener]]></title>
     <url>%2F2019%2F05%2F05%2F2019-04-24%20%E7%9B%91%E5%90%AC%E9%A1%B5%E9%9D%A2%E5%9B%9E%E9%80%80%EF%BC%8C%E6%B8%85%E9%99%A4eventListener%2F</url>
-    <content type="text"><![CDATA[监听页面回退问题：小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。解决方案：1234567891011created() &#123; if (window.history &amp;&amp; window.history.pushState) &#123; window.addEventListener("popstate", this.goBack, &#123; once: true &#125;); // 这个once表示 listener 在添加之后最多只调用一次。如果是 true， listener 会在其被调用之后自动移除 // 本来是计划在destroyed里面remove这个listener，但是似乎还没生效就destroy了，所以只能这样了 &#125;&#125;goBack() &#123; this.$router.go(-1);&#125; 遗留问题：能不能还是在destroyed里面remove这个listener? 清除eventListener123destroyed() &#123; window.removeEventListener("devicemotion", this.shakeListner, false);&#125;]]></content>
+    <content type="text"><![CDATA[监听页面回退问题：小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。解决方案： 1234567891011created() &#123; if (window.history &amp;&amp; window.history.pushState) &#123; window.addEventListener("popstate", this.goBack, &#123; once: true &#125;); // 这个once表示 listener 在添加之后最多只调用一次。如果是 true， listener 会在其被调用之后自动移除 // 本来是计划在destroyed里面remove这个listener，但是似乎还没生效就destroy了，所以只能这样了 &#125;&#125;goBack() &#123; this.$router.go(-1);&#125; 遗留问题：能不能还是在destroyed里面remove这个listener? 清除eventListener123destroyed() &#123; window.removeEventListener("devicemotion", this.shakeListner, false);&#125;]]></content>
       <categories>
         <category>-Diary</category>
       </categories>

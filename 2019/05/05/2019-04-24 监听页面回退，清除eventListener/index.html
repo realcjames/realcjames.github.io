@@ -120,7 +120,7 @@
 <meta property="og:site_name" content="不妥协直到变老">
 <meta property="og:description" content="监听页面回退问题：小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-05T09:44:15.865Z">
+<meta property="og:updated_time" content="2019-05-13T10:37:20.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2019-04-24 监听页面回退，清除eventListener">
 <meta name="twitter:description" content="监听页面回退问题：小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。">
@@ -262,7 +262,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">2</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">3</span></a>
 
   </li>
         
@@ -281,7 +281,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
 
   </li>
         
@@ -300,7 +300,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">3</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">4</span></a>
 
   </li>
         
@@ -452,12 +452,24 @@
                 
               
 
-              <time title="创建时间：2019-05-05 16:56:39 / 修改时间：17:44:15" itemprop="dateCreated datePublished" datetime="2019-05-05T16:56:39+08:00">2019-05-05</time>
+              <time title="创建时间：2019-05-05 16:56:39" itemprop="dateCreated datePublished" datetime="2019-05-05T16:56:39+08:00">2019-05-05</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-13 18:37:20" itemprop="dateModified" datetime="2019-05-13T18:37:20+08:00">2019-05-13</time>
               
             
           </span>
@@ -520,9 +532,10 @@
       
 
       
-        <h2 id="监听页面回退"><a href="#监听页面回退" class="headerlink" title="监听页面回退"></a>监听页面回退</h2><p><strong>问题：</strong>小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。<br><a id="more"></a><br><strong>解决方案：</strong><br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">created() &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.history &amp;&amp; <span class="built_in">window</span>.history.pushState) &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, <span class="keyword">this</span>.goBack, &#123; once: <span class="keyword">true</span> &#125;);</span><br><span class="line">    <span class="comment">// 这个once表示 listener 在添加之后最多只调用一次。如果是 true， listener 会在其被调用之后自动移除</span></span><br><span class="line">    <span class="comment">// 本来是计划在destroyed里面remove这个listener，但是似乎还没生效就destroy了，所以只能这样了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goBack() &#123;</span><br><span class="line">  <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="监听页面回退"><a href="#监听页面回退" class="headerlink" title="监听页面回退"></a>监听页面回退</h2><p><strong>问题：</strong>小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。<br><a id="more"></a><br><strong>解决方案：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">created() &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.history &amp;&amp; <span class="built_in">window</span>.history.pushState) &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, <span class="keyword">this</span>.goBack, &#123; <span class="attr">once</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">    <span class="comment">// 这个once表示 listener 在添加之后最多只调用一次。如果是 true， listener 会在其被调用之后自动移除</span></span><br><span class="line">    <span class="comment">// 本来是计划在destroyed里面remove这个listener，但是似乎还没生效就destroy了，所以只能这样了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">goBack() &#123;</span><br><span class="line">  <span class="keyword">this</span>.$router.go(<span class="number">-1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>遗留问题：</strong>能不能还是在destroyed里面remove这个listener?</p>
-<h2 id="清除eventListener"><a href="#清除eventListener" class="headerlink" title="清除eventListener"></a>清除eventListener</h2><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">destroyed() &#123;</span><br><span class="line">  <span class="built_in">window</span>.removeEventListener(<span class="string">"devicemotion"</span>, <span class="keyword">this</span>.shakeListner, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="清除eventListener"><a href="#清除eventListener" class="headerlink" title="清除eventListener"></a>清除eventListener</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">destroyed() &#123;</span><br><span class="line">  <span class="built_in">window</span>.removeEventListener(<span class="string">"devicemotion"</span>, <span class="keyword">this</span>.shakeListner, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -544,7 +557,7 @@
   <p><span>本文标题:</span><a href="/2019/05/05/2019-04-24 监听页面回退，清除eventListener/">2019-04-24 监听页面回退，清除eventListener</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 陈宸 的个人博客">陈宸</a></p>
   <p><span>发布时间:</span>2019年05月05日 - 16:56</p>
-  <p><span>最后更新:</span>2019年05月05日 - 17:44</p>
+  <p><span>最后更新:</span>2019年05月13日 - 18:37</p>
   <p><span>原始链接:</span><a href="/2019/05/05/2019-04-24 监听页面回退，清除eventListener/" title="2019-04-24 监听页面回退，清除eventListener">https://realcjames.github.io/2019/05/05/2019-04-24 监听页面回退，清除eventListener/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://realcjames.github.io/2019/05/05/2019-04-24 监听页面回退，清除eventListener/" aria-label="复制成功！"></i></span>
   </p>
@@ -625,6 +638,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/13/2019-05-13 react引入postcss-pxtorem，sass和css modules/" rel="prev" title="modules">
+                modules <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -697,7 +714,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -718,7 +735,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -739,7 +758,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -853,7 +874,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">全站共664字</span>
+  <span class="post-count">全站共1k字</span>
 </div>
 
         
