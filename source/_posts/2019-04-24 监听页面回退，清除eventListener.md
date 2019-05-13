@@ -11,7 +11,8 @@ tags:
 **问题：**小程序跳转到公众号的某个页面链接，中间经过授权页面，跳过去以后再回退会回到授权页。
 <!--more-->
 **解决方案：**
-```
+
+```javascript
 created() {
   if (window.history && window.history.pushState) {
     window.addEventListener("popstate", this.goBack, { once: true });
@@ -27,7 +28,7 @@ goBack() {
 **遗留问题：**能不能还是在destroyed里面remove这个listener?
 
 ## 清除eventListener
-```
+```javascript
 destroyed() {
   window.removeEventListener("devicemotion", this.shakeListner, false);
 }
