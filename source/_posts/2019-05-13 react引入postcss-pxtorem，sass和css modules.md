@@ -1,13 +1,13 @@
 ---
-title: modules
+title: react引入postcss-pxtorem，sass和css modules
 copyright: true
 date: 2019-05-13 15:27:28
 categories:
-	-Diary
-	-React
+  -Diary
+  -React
 tags:
-	-Diary
-	-React
+  -Diary
+  -React
 ---
 
 # react引入postcss-pxtorem，sass和css modules

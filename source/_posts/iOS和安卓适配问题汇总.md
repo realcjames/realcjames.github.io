@@ -3,13 +3,11 @@ title: iOS和安卓适配问题汇总
 copyright: true
 date: 2019-05-14 21:53:22
 categories:
-	-前端
-	-iOS
-	-Android
+  -iOS
+  -Android
 tags:
-	-前端
-	-iOS
-	-Android
+  -iOS
+  -Android
 ---
 
 # iOS和安卓适配问题汇总
