@@ -66,6 +66,8 @@ category_map:
     随笔: free
     iOS: iOS
     Android: Android
+    微信: 微信
+    小程序: 小程序
 tag_map:
     JavaScript: JavaScript
     Html: Html
@@ -77,6 +79,8 @@ tag_map:
     随笔: free
     iOS: iOS
     Android: Android
+    微信: 微信
+    小程序: 小程序
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
