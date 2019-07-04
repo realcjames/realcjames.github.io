@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[今世缘完美婚礼小程序总结]]></title>
+    <url>%2F2019%2F07%2F04%2F%E4%BB%8A%E4%B8%96%E7%BC%98%E5%AE%8C%E7%BE%8E%E5%A9%9A%E7%A4%BC%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[今世缘完美婚礼小程序总结 先占坑 瀑布流两列或多列照片墙&amp;定宽不定高&amp;排序的实现九宫格抽奖似乎还有待优化。。。 自定义动画实现浇水功能]]></content>
+      <categories>
+        <category>-微信 -小程序</category>
+      </categories>
+      <tags>
+        <tag>-微信 -小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[微信小程序开发总结]]></title>
+    <url>%2F2019%2F07%2F04%2F%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[微信小程序开发总结 先占坑，有时间一项项总结 登录鉴权 必须登录使用（公众号方式） 不登录也能用（app方式） session_key过期问题 模板消息form_id获取 请求封装授权和拒绝后的处理进入setting页面，让用户再开一次 更新机制canvas绘制分享图片&amp;保存scroll-view和view的滚动问题&amp;下拉刷新问题分享判断的问题]]></content>
+      <categories>
+        <category>-微信 -小程序</category>
+      </categories>
+      <tags>
+        <tag>-微信 -小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[iOS和安卓适配问题汇总]]></title>
     <url>%2F2019%2F05%2F14%2FiOS%E5%92%8C%E5%AE%89%E5%8D%93%E9%80%82%E9%85%8D%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB%2F</url>
     <content type="text"><![CDATA[iOS和安卓适配问题汇总 H5input 样式问题 iOS端，input默认是有padding-left的 iOS端，input不设置height和line-height的话，placeholder不是居中二是在上方 两者边框样式不同 引入fastclick以后，iOS端的input必须双击才能获取焦点（不确定是否是fastclick的锅） 持续更新……]]></content>
