@@ -148,7 +148,7 @@ export default {
 
 这个ace。。文档实在是。。全英文不说（虽然咱六级557，但我是个热爱中文的码农），还很难找，安装集成浪费了好久，找api浪费了好久，最后在[这里](https://github.com/ajaxorg/ace/wiki/Configuring-Ace)找到了配置，然而看完了我竟然不知道value在哪配，我此时真的是想yarn remove了，但是吧，抬头看看右上角，
 
-![star](..\assets\image\20190830141313.png)
+{% asset_img 20190830141313.png star image %}
 
 20K的star数，比咱月薪还高。。算了算了。。我也勉强点个star继续用吧~
 
