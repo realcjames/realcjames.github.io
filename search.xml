@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[阅读记录]]></title>
-    <url>%2F2019%2F09%2F16%2F%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95%2F</url>
-    <content type="text"><![CDATA[阅读记录佛系记录，一切随缘。 前端 你未必知道的49个CSS知识点 8个问题看你是否真的懂 JS 收下这波 JS 技巧，从此少加班 关于三次握手与四次挥手你要知道这些 重学 this 关键字(进阶必备知识） 看完这篇，你也能把 React Hooks 玩出花 React高频面试题梳理，看看面试怎么答？（上） 关于 CSS margin，一些让你模糊的点 产品管理 if 我是前端团队 Leader，怎么制定前端协作规范? git workflow 健身]]></content>
+    <url>%2F2019%2F09%2F17%2F%E9%98%85%E8%AF%BB%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[阅读记录佛系记录，一切随缘。 前端文章- [x] 你未必知道的49个CSS知识点- [x] 8个问题看你是否真的懂 JS- [ ] 收下这波 JS 技巧，从此少加班- [ ] 关于三次握手与四次挥手你要知道这些- [ ] 重学 this 关键字(进阶必备知识）- [ ] 看完这篇，你也能把 React Hooks 玩出花- [ ] React高频面试题梳理，看看面试怎么答？（上）- [ ] 关于 CSS margin，一些让你模糊的点 产品管理 if 我是前端团队 Leader，怎么制定前端协作规范? git workflow 健身]]></content>
   </entry>
   <entry>
     <title><![CDATA[Hexo搭建教程、配置和踩坑记录]]></title>
